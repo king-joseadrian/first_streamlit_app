@@ -42,7 +42,7 @@ try:
       streamlit.dataframe(back_from_function)
                                                
 #except ERLError as e:
-   streamlit.error()
+#   streamlit.error()
 #streamlit.write('The user entered ', fruit_choice)
 #import requests
 #streamlit.text(fruityvice_response.json())
