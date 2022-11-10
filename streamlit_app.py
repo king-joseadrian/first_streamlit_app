@@ -44,10 +44,18 @@ try:
 except URLError as e:
    streamlit.error()
 #streamlit.write('The user entered ', fruit_choice)
-#import requests
-#streamlit.text(fruityvice_response.json())
-# use pandas libraries to normalise and put json data in table ??
-# display table???
+streamlit.header("The fruit load list contains:")
+#Snowflake-related functions
+def get_fruit_load_list();
+	with my_cnx.curson() as my_cur
+		my_cur.execute("select * from fruit_load_list")
+		return my_cur.fetchall()
+
+# Add a button to load the fruit
+if streamlit.button('Get Fruit Load List');
+	my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
+	my_data_rows = get_fruit_load_list()
+	streamlit.dataframe(my_data_rows)
 
 
 # dont run anything after this
